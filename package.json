@@ -1,0 +1,55 @@
+{
+    "author": "Steven Olmsted <steven.olm@gmail.com>",
+    "bugs": "https://github.com/solmsted/kim-encoding/issues",
+    "dependencies": {
+        "isotropic-error": "~0.13.1"
+    },
+    "description": "Kim is a very simple encoding that delivers 7 bits per byte",
+    "devDependencies": {
+        "eslint": "~9.8.0",
+        "isotropic-dev-dependencies": "~0.3.1"
+    },
+    "engines": {
+        "node": "^22.5.1",
+        "npm": "^10.8.2"
+    },
+    "files": [
+        "lib"
+    ],
+    "homepage": "https://github.com/solmsted/kim-encoding",
+    "keywords": [
+        "7-bit",
+        "bigint",
+        "binary",
+        "character",
+        "codec",
+        "crockford",
+        "decode",
+        "decoding",
+        "encode",
+        "encoding",
+        "format",
+        "keep it minimal",
+        "kim",
+        "minimal",
+        "serialization",
+        "string",
+        "text",
+        "unicode",
+        "variable byte encoding"
+    ],
+    "license": "Zlib",
+    "main": "lib/kim-encoding.js",
+    "name": "kim-encoding",
+    "repository": "github:solmsted/kim-encoding",
+    "scripts": {
+        "lint": "eslint lib test",
+        "postprepare": "node ./node_modules/isotropic-dev-dependencies/lib/install-git-hooks.js",
+        "posttest": "[ -z \"$npm_config_coverage\" ] || c8 -c ./node_modules/isotropic-dev-dependencies/config/c8.json check-coverage",
+        "prepublishOnly": "npm test --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env BABEL_ENV=test c8 -c ./node_modules/isotropic-dev-dependencies/config/c8.json mocha --import=isotropic-dev-dependencies/lib/register-babel-loader.js"
+    },
+    "type": "module",
+    "version": "0.0.0"
+}
